@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="large-12 columns">
+            <a href="{% url 'note_list' %}">Назад</a>
+            {% if note.created_date %}
+                <div class="date">
+                    {{ post.created_date }}
+                </div>
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.description|linebreaksbr }}</p>
+        </div>
+    </div>
+
+{% endblock %}

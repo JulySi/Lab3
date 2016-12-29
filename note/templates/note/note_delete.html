@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+
+        <form method="POST" class="note-form">{% csrf_token %}
+            <div class="row">
+                <div class="large-12 columns">
+                    <a href="{% url 'note_list' %}">Назад</a>
+                    <h1>Удаление заметки</h1>
+                    <h2>Вы уверены что хотите удалить заметку?</h2>
+
+                    <label>{{ note.title }}</label>
+                    <label>{{ note.description }}</label>
+                    <button type="submit" class="save btn btn-default">Удалить</button>
+                </div>
+            </div>
+        </form>
+    {% endblock %}
